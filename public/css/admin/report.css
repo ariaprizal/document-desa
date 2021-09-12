@@ -1,0 +1,57 @@
+.report-container {
+    width: 100%;
+    padding: 2rem;
+}
+.report-container .table-responsive {
+    width: 100%;
+}
+.report-container h4 {
+    background-color: blanchedalmond;
+    padding-top: 1rem;
+}
+.report-container table {
+    width: 99.5%;
+    margin: 0;
+    padding: 0;
+}
+
+.report-container .date-area {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: blanchedalmond;
+    margin-bottom: 2rem;
+    margin-top: -1rem;
+}
+.date-area input {
+    width: 30%;
+    height: 3rem;
+    background-color: rgb(255, 255, 255);
+    outline: navajowhite;
+    border: 0.5px solid steelblue;
+    margin-right: 2rem;
+}
+.date-area button {
+    margin-right: 1rem;
+}
+
+@media screen and (max-width: 768px) {
+    .report-container {
+        padding: 0;
+    }
+    .report-container .date-area {
+        flex-wrap: wrap;
+        justify-content: space-around;
+        align-items: center;
+    }
+    .date-area input {
+        width: 100%;
+        margin-right: 0;
+        margin: .5rem;
+    }
+    .date-area button {
+        margin-top: 1rem;
+        margin-right: 0;
+    }
+}

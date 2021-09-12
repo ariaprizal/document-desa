@@ -1,0 +1,120 @@
+.section-dashboard {
+    width: 100%;
+    padding-left: 16rem;
+}
+.all-submissions{
+    width: 40%;
+    height: 7rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #49c6da;
+    color: #fff;
+    margin-left: 16rem;
+    border-top: none;
+    margin-left: 19rem;
+    border-bottom-left-radius: 3%;
+    border-bottom-right-radius: 3%;
+}
+.all-submissions i{
+    font-size: 3rem;
+}
+.all-submissions h4:nth-child(3){
+    background-color: #fff;
+    color: black;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    padding-top: .5rem;
+    text-align: center;
+}
+.history {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.history h1 {
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+.detail-section {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    height: 55vh;
+}
+.card-detail {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.card-detail .card-today {
+    width: 15rem;
+    height: 7rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(75, 176, 243);
+    margin: 0.5rem;
+    padding: 0.5rem;
+    border: none;
+    margin-bottom: 3rem;
+    border-radius: 5%;
+}
+.card-today h4 {
+    font-size: 1.2rem;
+    width: 10rem;
+    text-align: center;
+    color: #fff;
+}
+.card-today h4:nth-child(2) {
+    width: 110%;
+    background-color: #fff;
+    color: black;
+    height: 2rem;
+    padding-top: 0.2rem;
+    margin-top: 0.5rem;
+    margin-bottom: -0.6rem;
+}
+.detail-section h3 {
+    font-size: 1.2rem;
+    margin-left: 3.5rem;
+    margin-top: 3rem;
+}
+
+@media screen and (max-width: 768px) {
+    /* Area History */
+    .history {
+        padding-left: 0;
+    }
+    .history .table-responsive {
+        width: 100%;
+        padding: 0.5rem;
+    }
+    .history h1 {
+        margin-bottom: 2rem;
+        margin-top: 2rem;
+    }
+    .section-dashboard {
+        padding-left: 0;
+    }
+    .card-detail {
+        flex-direction: column;
+    }
+    .card-detail .card-today {
+        margin-bottom: 3rem;
+    }
+    .all-submissions{
+        width: 80%;
+        height: 14rem;
+        margin-left: 2.5rem;
+        margin-top: -.5rem;
+        flex-direction: column;
+    }
+}

@@ -1,0 +1,206 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* body::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    background-color: #f5f5f5;
+} */
+
+body::-webkit-scrollbar {
+    width: 0px;
+    background-color: #f5f5f5;
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: #000000;
+    border: 0px solid #555555;
+}
+
+
+
+.navbar-guest {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 5rem;
+    color: #fff;
+    font-family: sans-serif;
+}
+.navbar-guest ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 1rem;
+    width: 40%;
+    list-style: none;
+}
+.navbar-guest ul .nav-menu {
+    display: flex;
+    width: 50rem;
+    justify-content: start;
+    margin-left: -10rem;
+}
+.navbar-guest ul .nav-menu li {
+    padding: 0 1rem;
+}
+
+/* login and register button  */
+.navbar-guest ul .login-btn {
+    display: flex;
+}
+.navbar-guest ul .login-btn li {
+    height: 3rem;
+    width: 8rem;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10rem;
+}
+.navbar-guest ul .login-btn li:nth-child(1) {
+    display: flex;
+    background-color: cadetblue;
+    margin-right: -2.5rem;
+    z-index: 1;
+}
+.navbar-guest ul .login-btn li:nth-child(2) {
+    display: flex;
+    background-color: rgb(43, 69, 83);
+    margin-left: auto;
+    margin-right: -5rem;
+}
+
+.navbar-guest ul li a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.toggle-btn {
+    font-size: 2.5rem;
+    display: none;
+}
+
+/* area footer */
+footer {
+    width: 100%;
+    height: 50vh;
+    background-color: rgb(34, 33, 33);
+    display: flex;
+    justify-content: space-between;
+    color: #fff;
+    flex-direction: column;
+}
+.footer-content {
+    width: 100%;
+    height: 50vh;
+    background-color: rgb(34, 33, 33);
+    display: flex;
+    justify-content: space-between;
+    color: #fff;
+}
+.footer-social {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    background-color: rgb(218, 177, 125);
+    width: 5%;
+}
+.footer-social i {
+    font-size: 1.5rem;
+    color: #ffffff;
+}
+.footer-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 20%;
+    margin-right: 20rem;
+}
+.footer-info hr {
+    width: 100%;
+    height: 1px;
+    color: gray;
+}
+.footer-email {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-right: 8rem;
+}
+.footer-email h2 {
+    margin-bottom: 1.5rem;
+    margin-top: 5.5rem;
+}
+.footer-email form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 2rem;
+}
+footer .copyright {
+    padding-top: 0rem;
+    width: 100%;
+    color: #ffffff;
+    text-align: center;
+    background-color: rgb(218, 177, 125);
+}
+.copyright p {
+    padding-top: 1rem;
+}
+
+/* responsive */
+
+@media screen and (max-width: 768px) {
+    .navbar-guest {
+        position: relative;
+        z-index: 1;
+    }
+    .navbar-guest ul {
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        width: 85%;
+        top: 5rem;
+        right: 0;
+        background-color: black;
+        position: absolute;
+        opacity: 0;
+        height: 0vh;
+        transition: all 0.5s ease-in-out;
+    }
+    .navbar-guest ul .nav-menu {
+        flex-direction: column;
+        width: auto;
+        height: 25rem;
+        margin-left: 0;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+    .navbar-guest ul .nav-menu li {
+        margin-left: 0;
+        font-size: 1.2rem;
+    }
+    .navbar-guest ul .login-btn li:nth-child(1) {
+        margin-right: -1.5rem;
+    }
+    .navbar-guest ul .login-btn li:nth-child(2) {
+        margin-right: 0rem;
+        margin-left: 0;
+    }
+
+    .toggle-btn {
+        display: block;
+    }
+
+    .navbar-guest .show-menu {
+        opacity: 1;
+        height: 85vh;
+    }
+    .navbar-guest ul .login-btn li {
+        width: 6.5rem;
+    }
+}

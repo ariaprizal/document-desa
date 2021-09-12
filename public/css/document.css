@@ -1,0 +1,307 @@
+.section-domisili {
+    width: 100%;
+    height: 120vh;
+    background-color: #f8feff;
+    padding-left: 10%;
+}
+.section-domisili h2 {
+    padding-top: 3rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    margin-left: 5rem;
+}
+.form-domisili {
+    width: 65%;
+    display: flex;
+    background: white;
+    flex-direction: column;
+    padding: 0 3rem 0 3rem;
+    margin-left: 17rem;
+    padding-bottom: 0.5rem;
+    position: relative;
+    background: linear-gradient(
+        to right bottom,
+        rgba(255, 255, 255, 0.7),
+        rgba(255, 255, 255, 0.3)
+    );
+    backdrop-filter: blur(2rem);
+    border-radius: 0.5rem;
+    z-index: 1;
+}
+
+.circle1,
+.circle2,
+.circle2-sktm,
+.circle2-sku,
+.circle2-bedaNama {
+    background: white;
+    background: linear-gradient(
+        to right bottom,
+        rgb(255, 99, 71, 1),
+        rgb(255, 179, 166)
+    );
+    width: 15rem;
+    height: 15rem;
+    border-radius: 50%;
+    position: absolute;
+}
+.circle1 {
+    top: 30%;
+    right: 10%;
+}
+.circle2 {
+    top: 60%;
+    left: 15%;
+}
+.circle2-sktm {
+    top: 65%;
+    left: 20%;
+}
+.circle2-sku {
+    top: 63%;
+    left: 20%;
+}
+.circle2-bedaNama {
+    top: 70%;
+    left: 20%;
+}
+
+.form-domisili h3 {
+    padding-top: 1rem;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+.section-domisili button {
+    margin-bottom: 5rem;
+}
+.form-domisili .data-form {
+    display: flex;
+}
+
+.input-syarat {
+    display: flex;
+    flex-direction: column;
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+.input-syarat label {
+    margin-bottom: 0.5rem;
+    margin-top: 1rem;
+}
+
+.input-data {
+    display: flex;
+    margin-top: 2rem;
+    margin-left: 1rem;
+}
+.register-input {
+    position: relative;
+    padding-bottom: 15px;
+    width: 100%;
+}
+.register-input input {
+    display: block;
+    width: 300px;
+    height: 40px;
+    background-color: transparent;
+    border: 1px solid rgb(133, 132, 132);
+    transition: width 1s ease-in-out;
+    padding-left: 1.3rem;
+    padding-top: 0.5rem;
+}
+
+.register-input input:focus {
+    border: 1px solid #ff2d6b;
+    outline: none;
+}
+
+.register-input label {
+    position: absolute;
+    width: 300px;
+    cursor: text;
+    z-index: 2;
+    top: 8px;
+    left: 10px;
+    font-size: 13px;
+    font-weight: bold;
+    background: transparent;
+    padding: 0 10px;
+    color: rgb(19, 18, 18);
+    transition: all 0.3s ease;
+}
+.register-input .splah {
+    width: 300px;
+    height: 40px;
+    background: tomato;
+    position: absolute;
+    cursor: text;
+    z-index: 0;
+    top: 0px;
+    left: 0px;
+    padding: 0 10px;
+    transition: width 1s ease;
+}
+.register-input input:focus + label,
+.register-input input:valid + label {
+    font-size: 11px;
+    top: -7px;
+    left: -10px;
+    width: auto;
+    background: #fff;
+}
+.register-input input:focus + label {
+    color: #ff2d6b;
+}
+.register-input input:focus + label + .splah,
+.register-input input:valid + label + .splah {
+    background: #ff2d6b;
+    width: 0;
+    left: -10px;
+    border: 1px solid #ff2d6b;
+}
+
+/* image preview */
+
+.image-preview {
+    width: 20rem;
+    height: 20rem;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border: 2px solid #dddddd;
+    margin-top: 1.5rem;
+}
+.image-preview .image-preview__image {
+    display: none;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+.image-preview .image-preview__text {
+    font-family: sans-serif;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #cccccc;
+}
+
+.image-preview__edit {
+    width: 20rem;
+    height: 20rem;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 1.5rem;
+}
+.image-preview__edit .image-preview__image-edit {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+/* Image Kartu Keluarga */
+.image-previewKk {
+    width: 20rem;
+    height: 20rem;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border: 2px solid #dddddd;
+    margin-top: 1.5rem;
+}
+.image-previewKk .image-previewKk__image {
+    display: none;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+.image-previewKk .image-previewKk__text {
+    font-family: sans-serif;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #cccccc;
+}
+
+.image-previewKk__edit {
+    width: 20rem;
+    height: 20rem;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 1.5rem;
+}
+.image-previewKk__edit .image-previewKk__image-edit {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+/* end image previe */
+
+/* REsponsive */
+
+@media screen and (max-width: 768px) {
+    .data-form {
+        display: flex;
+        flex-direction: column;
+    }
+    .section-dashboard {
+        height: 100%;
+        padding-bottom: 5rem;
+    }
+    .section-domisili {
+        padding: 0.5rem;
+    }
+    .section-domisili h2 {
+        font-size: 1.2rem;
+        margin-left: 0;
+    }
+    .form-domisili h3 {
+        font-size: 1.2rem;
+    }
+    .form-domisili {
+        margin-left: 0;
+        width: 100%;
+    }
+
+    .input-syarat {
+        margin-left: 0;
+    }
+    .input-syarat .image-preview {
+        width: 100%;
+        height: 15rem;
+    }
+    .circle1,
+    .circle2,
+    .circle2-sku,
+    .circle2-sktm {
+        display: none;
+    }
+    .form-domisili .input-data {
+        display: flex;
+        flex-direction: column;
+        margin-left: 0;
+        width: 100%;
+    }
+    .form-domisili .input-data .register-input input,
+    .form-domisili .input-data .register-input label {
+        width: 100%;
+    }
+    .input-data .register-input .splah {
+        width: 100%;
+    }
+
+    .image-previewKk {
+        width: 100%;
+        height: 16.5rem;
+    }
+}
