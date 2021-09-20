@@ -50,35 +50,38 @@
 }
 .detail-submissions .requirements img {
     width: 20.5rem;
+    height: 20rem;
+    object-fit: contain;
 }
 
 .detail-submissions .requirements {
     display: flex;
     justify-content: space-around;
-    width: 80%;
+    /* flex-direction: column; */
+    width: 100%;
+    flex-wrap: nowrap;
     padding-top: 2rem;
     padding-bottom: 2rem;
-    align-items: start;
+    align-items: flex-start;
 }
-.detail-submissions .requirements div:nth-child(1) {
-    width: 22rem;
+.detail-submissions .requirements .detail {
+    width: 20rem;
 }
-.detail {
+.detail-submissions .requirements .image-area {
     display: flex;
-    justify-content: space-between;
 }
-.detail p {
-    text-align: justify;
-}
+
 .detail-submissions .validation {
     width: 100%;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: flex-start;
+    padding-left: 2rem;
     padding-bottom: 2rem;
 }
-.validation a:nth-child(1) {
-    margin-left: 27.5rem;
+.validation a:nth-child(1){
+    margin-right: 10rem;
 }
+
 /* ----------------------------------------------------------------------------------------------------------- */
 
 /* Responsive */

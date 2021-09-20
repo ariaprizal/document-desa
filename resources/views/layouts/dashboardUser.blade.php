@@ -23,7 +23,7 @@
 
 <body>
     <div class="search-bar">
-        <h2>Hallo {{Auth::user()->name}}</h2>
+        <h2>Selamat Datang {{Auth::user()->name}}</h2>
         <a href="{{route('/')}}" class="go-home"><i class='bx bxs-home'></i></a>
     </div>
     <div class="side-bar">

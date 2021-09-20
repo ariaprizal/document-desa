@@ -693,6 +693,176 @@
         </div>
     </div>
     <!-- end Template Penghasilan -->
+
+    <!-- Template Keramaian -->
+    @elseif ($submit->jenis_surat == 'Surat Izin Keramaian')
+    <div class="template">
+        <img class="logo" src="{{asset('images/insunMedal.png')}}" alt="logo-insun_medal">
+        <div class="template-head">
+            <h1>pemerintah daerah kabupaten Sumedang</h1>
+            <h1 style="margin-top: -1rem; font-size: 1.4rem;">Kecamatan sukasari.</h1>
+            <h1 style="margin-top: -1rem; font-size: 1.4rem;"><b>desa nanggerang</b> </h1>
+            <h2>Jl.Cikuda Nanggerang Dusun Nanggerang Rt 01 Rw 01 45366</h2>
+        </div>
+        <div class="line-head">
+            <hr>
+            <hr>
+        </div>
+        <div class="id-document">
+            <h3> {{$submit->jenis_surat}} </h3>
+            <hr style="width: 12.2rem; ">
+            <h4>Nomor : {{$submit->no_surat}}/DS/{{\Carbon\Carbon::now()->isoFormat('Y')}}</h4>
+        </div>
+        <div class="template-content">
+            <p style="text-indent: .5in;">Yang bertanda tangan di bawah ini Kepala Desa Nanggerang Kecamatan Sukasari. Kabupaten SUMEDANG, menerangkan dengan sebenarnya bahwa: </p>
+            <table class="" style="white-space: pre;">
+                <tr>
+                    <td>Nama Lengkap</td>
+                    <td style="text-indent: .2in;">: <b>{{$u->name}}</b> </td>
+                </tr>
+                <tr>
+                    <td>Nomor Induk Kependudukan</td>
+                    <td style="text-indent: .2in;">: {{$u->nik}}</td>
+                </tr>
+                <tr>
+                    <td>Nomor Kartu Keluarga</td>
+                    <td style="text-indent: .2in;">: {{$u->nkk}}</td>
+                </tr>
+                <tr>
+                    <td>Tempat Lahir</td>
+                    <td style="text-indent: .2in;">: {{$u->tempat_lahir}}</td>
+                </tr>
+                <tr>
+                    <td>Tanggal Lahir</td>
+                    <td style="text-indent: .2in;">: {{\Carbon\Carbon::parse($u->tgl_lahir)->isoFormat('dddd, D MMMM Y')}}</td>
+                </tr>
+                <tr>
+                    <td>Jenis Kelamin</td>
+                    <td style="text-indent: .2in;">: {{$u->jenis_kelamin}}</td>
+                </tr>
+                <tr>
+                    <td>Agama</td>
+                    <td style="text-indent: .2in;">: {{$u->agama}}</td>
+                </tr>
+                <tr>
+                    <td>Pendidikan</td>
+                    <td style="text-indent: .2in;">: {{$u->pendidikan}}</td>
+                </tr>
+                <tr>
+                    <td>Pekerjaan </td>
+                    <td style="text-indent: .2in;">: {{$u->pekerjaan}}</td>
+                </tr>
+                <tr>
+                    <td>Status Perkawinan</td>
+                    <td style="text-indent: .2in;">: {{$u->status}}</td>
+                </tr>
+                <tr>
+                    <td>Nama Orang Tua</td>
+                    <td style="text-indent: .2in;">: {{$u->nama_ibu}} /{{$u->nama_ayah}}</td>
+                </tr>
+                <tr>
+                    <td>Alamat </td>
+                    <td style="text-indent: .2in; ">: {{$u->alamat}} <br> Desa Nanggerang Kecamatan sukasari <br> Kabupaten Sumedang Provinsi Jawa Barat</td>
+                </tr>
+            </table>
+        </div>
+        <div class="content-footer">
+            <p style="text-indent: .5in;">Berdasarkan pengetahuan kami dan data yang ada benar bahwa yang bersangkutan Penduduk Desa NANGGERANG Kecamatan SUKASARI. dan </p>
+            <h4 style="text-align: center;">==benar akan melaksanakan keramaian dengan maksud {{$submit->maksud_kegiatan}} pada hari, tanggal {{\Carbon\Carbon::parse($submit->tgl)->isoFormat('dddd, D MMMM Y')}} yang bertempat di {{$submit->lokasi}} ==</h4>
+            <p style="text-indent: .5in; margin-top: -.5rem;">Demikian keterangan ini, untuk dipergunakan sebagaimana mestinya.</p>
+        </div>
+        <div class="template-ttd">
+            <p>SUMEDANG, {{\Carbon\Carbon::parse($submit->update_at)->isoFormat('DD MMMM Y')}}</p>
+            <p style="margin-top: -.7rem;">Kepala Desa Nanggerang</p>
+            <p><img class="qr-code" src="{{asset('images/qr-code.png')}}" alt="qr-code"></p>
+        </div>
+    </div>
+    <!-- end Template Keramaian -->
+
+    <!-- Template Kehilangan -->
+    @elseif ($submit->jenis_surat == 'Surat Keterangan Kehilangan')
+    <div class="template">
+        <img class="logo" src="{{asset('images/insunMedal.png')}}" alt="logo-insun_medal">
+        <div class="template-head">
+            <h1>pemerintah daerah kabupaten Sumedang</h1>
+            <h1 style="margin-top: -1rem; font-size: 1.4rem;">Kecamatan sukasari.</h1>
+            <h1 style="margin-top: -1rem; font-size: 1.4rem;"><b>desa nanggerang</b> </h1>
+            <h2>Jl.Cikuda Nanggerang Dusun Nanggerang Rt 01 Rw 01 45366</h2>
+        </div>
+        <div class="line-head">
+            <hr>
+            <hr>
+        </div>
+        <div class="id-document">
+            <h3> {{$submit->jenis_surat}} </h3>
+            <hr style="width: 17rem; ">
+            <h4>Nomor : {{$submit->no_surat}}/DS/{{\Carbon\Carbon::now()->isoFormat('Y')}}</h4>
+        </div>
+        <div class="template-content">
+            <p style="text-indent: .5in;">Yang bertanda tangan di bawah ini Kepala Desa Nanggerang Kecamatan Sukasari. Kabupaten SUMEDANG, menerangkan dengan sebenarnya bahwa: </p>
+            <table class="" style="white-space: pre;">
+                <tr>
+                    <td>Nama Lengkap</td>
+                    <td style="text-indent: .2in;">: <b>{{$u->name}}</b> </td>
+                </tr>
+                <tr>
+                    <td>Nomor Induk Kependudukan</td>
+                    <td style="text-indent: .2in;">: {{$u->nik}}</td>
+                </tr>
+                <tr>
+                    <td>Nomor Kartu Keluarga</td>
+                    <td style="text-indent: .2in;">: {{$u->nkk}}</td>
+                </tr>
+                <tr>
+                    <td>Tempat Lahir</td>
+                    <td style="text-indent: .2in;">: {{$u->tempat_lahir}}</td>
+                </tr>
+                <tr>
+                    <td>Tanggal Lahir</td>
+                    <td style="text-indent: .2in;">: {{\Carbon\Carbon::parse($u->tgl_lahir)->isoFormat('dddd, D MMMM Y')}}</td>
+                </tr>
+                <tr>
+                    <td>Jenis Kelamin</td>
+                    <td style="text-indent: .2in;">: {{$u->jenis_kelamin}}</td>
+                </tr>
+                <tr>
+                    <td>Agama</td>
+                    <td style="text-indent: .2in;">: {{$u->agama}}</td>
+                </tr>
+                <tr>
+                    <td>Pendidikan</td>
+                    <td style="text-indent: .2in;">: {{$u->pendidikan}}</td>
+                </tr>
+                <tr>
+                    <td>Pekerjaan </td>
+                    <td style="text-indent: .2in;">: {{$u->pekerjaan}}</td>
+                </tr>
+                <tr>
+                    <td>Status Perkawinan</td>
+                    <td style="text-indent: .2in;">: {{$u->status}}</td>
+                </tr>
+                <tr>
+                    <td>Nama Orang Tua</td>
+                    <td style="text-indent: .2in;">: {{$u->nama_ibu}} /{{$u->nama_ayah}}</td>
+                </tr>
+                <tr>
+                    <td>Alamat </td>
+                    <td style="text-indent: .2in; ">: {{$u->alamat}} <br> Desa Nanggerang Kecamatan sukasari <br> Kabupaten Sumedang Provinsi Jawa Barat</td>
+                </tr>
+            </table>
+        </div>
+        <div class="content-footer">
+            <p style="text-indent: .5in;">Berdasarkan pengetahuan kami dan data yang ada benar bahwa yang bersangkutan Penduduk Desa NANGGERANG Kecamatan SUKASARI. dan </p>
+            <h4 style="text-align: center;">==benar telah kehilangan {{$submit->barang}} pada hari, tanggal {{\Carbon\Carbon::parse($submit->tgl)->isoFormat('dddd, D MMMM Y')}}, lokasi kehilangan di {{$submit->lokasi}} ==</h4>
+            <p style="text-indent: .5in; margin-top: -.5rem;">Demikian keterangan ini, untuk dipergunakan sebagaimana mestinya.</p>
+        </div>
+        <div class="template-ttd">
+            <p>SUMEDANG, {{\Carbon\Carbon::parse($submit->update_at)->isoFormat('DD MMMM Y')}}</p>
+            <p style="margin-top: -.7rem;">Kepala Desa Nanggerang</p>
+            <p><img class="qr-code" src="{{asset('images/qr-code.png')}}" alt="qr-code"></p>
+        </div>
+    </div>
+    <!-- end Template kehilangan -->
     @endif
     @endforeach
     @endforeach

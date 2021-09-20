@@ -13,53 +13,137 @@
     <div class="requirements">
         @foreach($submissions as $submit)
         @foreach($user as $u)
-        <div>
-            <p>Nama Pengaju : {{$u->name}} </p>
-            <p>No. KTP : {{$submit->nik}}</p>
-            <p>Jenis Dokumen : {{$submit->jenis_surat}} </p>
+        <div class="detail">
+            <table class="table">
+                <tbody>
+                    <tr>
+                        <td>Nama Pengaju </td>
+                        <td>: {{$u->name}}</td>
+                    </tr>
+                    <tr>
+                        <td>No. KTP </td>
+                        <td>: {{$submit->nik}}</td>
+                    </tr>
+                    <tr>
+                        <td>Jenis Dokumen </td>
+                        <td>: {{$submit->jenis_surat}}</td>
+                    </tr>
 
-            @if($submit->jenis_surat == 'Surat Keterangan Penghasilan')
-            <p>Besar Penhasilan : {{$submit->besar}}</p>
-            <p>Keperluan Surat : {{$submit->keperluan}}</p>
+                    @if($submit->jenis_surat == 'Surat Keterangan Penghasilan')
+                    <tr>
+                        <td>Besar Penhasilan</td>
+                        <td>: {{$submit->besar}}</td>
+                    </tr>
+                    <tr>
+                        <td>Keperluan Surat</td>
+                        <td>: {{$submit->keperluan}}</td>
+                    </tr>
 
-            @elseif($submit->jenis_surat == 'Surat Pengantar SKCK')
-            <p>Keperluan : {{$submit->keperluan}} </p>
+                    @elseif($submit->jenis_surat == 'Surat Pengantar SKCK')
+                    <tr>
+                        <td>Keperluan</td>
+                        <td>: {{$submit->keperluan}}</td>
+                    </tr>
 
-            @elseif($submit->jenis_surat == 'Surat Keterangan Tidak Mampu')
-            <p>Nama Anak : {{$submit->nama_anak}} </p>
-            <p>Jenis Kelamin : {{$submit->jenis_kelamin}} </p>
-            <p>Pekerjaan Anak : {{$submit->pekerjaan_anak}} </p>
-            <p>Keperluan : {{$submit->keperluan}} </p>
+                    @elseif($submit->jenis_surat == 'Surat Keterangan Tidak Mampu')
+                    <tr>
+                        <td>Nama Anak</td>
+                        <td>: {{$submit->nama_anak}}</td>
+                    </tr>
+                    <tr>
+                        <td>Jenis Kelamin</td>
+                        <td>: {{$submit->jenis_kelamin}}</td>
+                    </tr>
+                    <tr>
+                        <td>Pekerjaan Anak</td>
+                        <td>: {{$submit->pekerjaan_anak}}</td>
+                    </tr>
+                    <tr>
+                        <td>Keperluan</td>
+                        <td>: {{$submit->keperluan}}</td>
+                    </tr>
 
-            @elseif($submit->jenis_surat == 'Surat Keterangan Tidak Mampu')
-            <p>Perbedaan : {{$submit->perbedaan}} </p>
-            <p>Dokumen 1 : {{$submit->dokumen1}} </p>
-            <p>Tertulis Pada dokumen 1 : {{$submit->tertulis1}} </p>
-            <p>Dokumen 2 : {{$submit->dokumen2}} </p>
-            <p>Tertulis Pada dokumen 2 : {{$submit->tertulis2}} </p>
-            <p>Keperluan : {{$submit->keperluan}} </p>
+                    @elseif($submit->jenis_surat == 'Surat Keterangan Tidak Mampu')
+                    <tr>
+                        <td>Perbedaan</td>
+                        <td>: {{$submit->perbedaan}}</td>
+                    </tr>
+                    <tr>
+                        <td>Dokumen 1</td>
+                        <td>: {{$submit->dokumen1}}</td>
+                    </tr>
+                    <tr>
+                        <td>Tertulis Pada dokumen 1</td>
+                        <td>: {{$submit->tertulis1}}</td>
+                    </tr>
+                    <tr>
+                        <td>Dokumen 2</td>
+                        <td>: {{$submit->dokumen2}}</td>
+                    </tr>
+                    <tr>
+                        <td>Tertulis Pada dokumen 2</td>
+                        <td>: {{$submit->tertulis2}}</td>
+                    </tr>
+                    <tr>
+                        <td>Keperluan</td>
+                        <td>: {{$submit->keperluan}}</td>
+                    </tr>
 
-            @elseif($submit->jenis_surat == 'Surat Keterangan Usaha')
-            <p>Jenis Usaha : {{$submit->jenis_usaha}}</p>
-            <p>Lokasi Usaha : {{$submit->lokasi}}</p>
+                    @elseif($submit->jenis_surat == 'Surat Keterangan Usaha')
+                    <tr>
+                        <td>Jenis Usaha</td>
+                        <td>: {{$submit->jenis_usaha}}</td>
+                    </tr>
+                    <tr>
+                        <td>Lokasi Usaha</td>
+                        <td>: {{$submit->lokasi}}</td>
+                    </tr>
 
-            @elseif($submit->jenis_surat == 'Surat Izin Keramaian')
-            <p>Maksud Keramaian : {{$submit->maksud_kegiatan}} </p>
-            <p>Lokas Keramaian : {{$submit->lokasi}} </p>
-            <p>Waktu Keramaian : {{$submit->tgl}} </p>
+                    @elseif($submit->jenis_surat == 'Surat Izin Keramaian')
+                    <tr>
+                        <td>Maksud Keramaian</td>
+                        <td>: {{$submit->maksud_kegiatan}}</td>
+                    </tr>
+                    <tr>
+                        <td>Lokas Keramaian</td>
+                        <td>: {{$submit->lokasi}}</td>
+                    </tr>
+                    <tr>
+                        <td>Waktu Keramaian</td>
+                        <td>: {{$submit->tgl}}</td>
+                    </tr>
 
-            @elseif($submit->jenis_surat == 'Surat Keterangan Kehilangan')
-            <p>Barang Yang Hilang : {{$submit->barang}} </p>
-            <p>Waktu Hilang : {{$submit->tgl}} </p>
-            <p>Lokasi Hilang : {{$submit->lokasi}} </p>
-            <p>Keperluan Dokumen : {{$submit->keperluan}} </p>
-            @endif
+                    @elseif($submit->jenis_surat == 'Surat Keterangan Kehilangan')
+                    <tr>
+                        <td>Barang Yang Hilang</td>
+                        <td>: {{$submit->barang}}</td>
+                    </tr>
+                    <tr>
+                        <td>Waktu Hilang</td>
+                        <td>: {{$submit->tgl}}</td>
+                    </tr>
+                    <tr>
+                        <td>Lokasi Hilang</td>
+                        <td>: {{$submit->lokasi}}</td>
+                    </tr>
+                    <tr>
+                        <td>Keperluan Dokumen</td>
+                        <td>: {{$submit->keperluan}}</td>
+                    </tr>
+                    @endif
+                </tbody>
+            </table>
         </div>
-        <div>
-            <p>Photo KTP</p>
-            <img src="{{asset('/submissions/image/ktp/'.$submit->ktp)}}" alt="photo-ktp">
-            <p>Photo Kartu Keluarga</p>
-            <img src="{{asset('/submissions/image/kk/'.$submit->ktp)}}" alt="photo-kk">
+        <div class="image-area ml-5">
+            <div>
+                <p class="text-center">Photo KTP</p>
+                <img src="{{asset('/submissions/image/ktp/'.$submit->ktp)}}" alt="photo-ktp">
+            </div>
+            <div>
+                <p class="text-center">Photo Kartu Keluarga</p>
+                <img src="{{asset('/submissions/image/kk/'.$submit->ktp)}}" alt="photo-kk">
+            </div>
+
         </div>
 
 
