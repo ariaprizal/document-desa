@@ -46,8 +46,8 @@ class DocumentController extends Controller
     // Show History Submissin
     public function history(Request $request)
     {
-        // $submissions = Submission::where('nik', Auth::user()->nik)->get();
-        $submissions = DB::table('submissions')->get();
+        $submissions = Submission::where('nik', Auth::user()->nik)->get();
+        // $submissions = DB::table('submissions')->get();
         if ($request->ajax()) {
             return DataTables()->of($submissions)
                 ->addColumn('action', function ($data) {
@@ -112,7 +112,10 @@ class DocumentController extends Controller
             'nik' => ['required'],
             'ktp' => ['required'],
             'kk' => ['required'],
+            'views' => ['required'],
+            'level' => ['required']
         ]);
+        
 
         if ($validator->fails()) {
             return redirect()->back()->with('error', 'Silahkan Isi Semua Data Terlebih Dahulu');

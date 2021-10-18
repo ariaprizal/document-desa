@@ -21,7 +21,7 @@ burger.addEventListener('click', () => {
 
 
     // preview Image KTP
-const photoKtp = document.getElementById('input-ktp');
+    const photoKtp = document.getElementById('input-ktp');
     const imagePreview = document.getElementById('image-preview');
     let imageResult = document.querySelector('.image-preview__image')
     const textPreview = imagePreview.querySelector('.image-preview__text');

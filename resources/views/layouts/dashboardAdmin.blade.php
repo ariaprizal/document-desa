@@ -19,6 +19,8 @@
     <!-- AOS -->
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+
     <title>@yield('title')</title>
 </head>
 
@@ -33,7 +35,17 @@
                 </div>
                 <div class="sidebar_menu">
                     <a class="active" href="{{route('admin-dashboard')}}"><i class='bx bxs-dashboard'></i>Dashboard</a>
-                    <a href="{{route('list-submissions')}}"><i class='bx bx-list-ul'></i>Daftar Pengajuan</a>
+
+
+                    <a class="" href="{{route('list-submissions')}}">
+
+                        <input type="hidden" name="views" value="0">
+                        @if($notif==true)
+                        <i class='bx bx-notification animate-bounce text-red-600'></i>
+                        @else
+                        <i class='bx bx-list-ul'></i>
+                        @endif
+                        Daftar Pengajuan</a>
                     <a href="{{route('report')}}"><i class='bx bxs-report'></i>Laporan</a>
                 </div>
                 <div class="other-menu">

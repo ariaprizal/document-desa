@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Submission as ModelsSubmission;
 use App\Models\User;
+use App\Models\Submission;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -31,17 +33,22 @@ class AuthController extends Controller
     // Login Process
     public function loginProcess(Request $request)
     {
+
         $credentials = $request->validate([
             'nik' => ['required'],
             'password' => ['required'],
         ]);
         $remember_me = $request->has('remember') ? true : false;
-        if (Auth::attempt($credentials,$remember_me)) {
+        if (Auth::attempt($credentials, $remember_me)) {
             $user = Auth::user();
             if ($user->is_admin == '1') {
                 return redirect()->intended('/admin/dashboard');
             } else if ($user->is_admin == '0') {
                 return redirect()->intended('/user/dashboard');
+            } else if ($user->is_admin == '2') {
+                return redirect()->intended('/rt/list');
+            } else if ($user->is_admin == '3') {
+                return redirect()->intended('/rw/list');
             }
             $request->session()->regenerate();
         }

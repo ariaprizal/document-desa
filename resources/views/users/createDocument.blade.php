@@ -11,6 +11,10 @@
         <h3>{{$value}} </h3>
         <form action="{{route('submission')}}" method="post" enctype="multipart/form-data">
             @csrf
+            <!--  -->
+            <input type="hidden" name="views" value="1">
+            <input type="hidden" name="level" value="rt">
+            <!--  -->
             <!-- Error Info -->
             @if(session('error'))
             <div class="alert alert-warning alert-dismissible fade show" role="alert">
@@ -29,7 +33,7 @@
             <div class="data-form">
                 <div class="input-group input-syarat">
                     <label for="input-ktp">Upload Photo KTP</label>
-                    <input type="file" class="form-control w-100" aria-describedby="inputGroupFileAddon04" aria-label="Upload" name="ktp" id="input-ktp" require>
+                    <input type="file" class="form-control w-100" aria-describedby="inputGroupFileAddon04" aria-label="Upload" name="ktp" id="input-ktp" >
                     <div class="image-preview" id="image-preview">
                         <img src="" alt="Gambar Pratinjau" class="image-preview__image" id="image-preview__image">
                         <span class="image-preview__text">Gambar Pratinjau</span>
@@ -219,7 +223,12 @@
                     <div class="splah"></div>
                 </div>
                 <div class="register-input">
-                    <input type="text" name="jenis_kelamin" id="jenisKelamin" autocomplete="off" required value="{{ old('jenis_kelamin') }}">
+                    <select name="jenis_kelamin" id="jenisKelamin" required>
+                        <option value=""></option>
+                        <option value="Laki-Laki">Laki-Laki</option>
+                        <option value="Perempuan">Perempuan</option>
+                    </select>
+                    <!-- <input type="text" name="jenis_kelamin" id="jenisKelamin" autocomplete="off" required value="{{ old('jenis_kelamin') }}"> -->
                     <label for="jenisKelamin">Jenis Kelamin</label>
                     <div class="splah"></div>
                 </div>

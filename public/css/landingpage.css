@@ -39,6 +39,7 @@ header .jumbo-text {
     align-items: center;
     justify-content: center;
     text-align: center;
+    z-index: 100;
 }
 
 header .jumbo-text h2 {
@@ -47,6 +48,7 @@ header .jumbo-text h2 {
 header .jumbo-text h3 {
     letter-spacing: 0.2rem;
     font-size: 2rem;
+    z-index: 2;
 }
 header .jumbo-text a {
     color: #fff;
@@ -55,6 +57,7 @@ header .jumbo-text a {
     background-color: cadetblue;
     border-radius: 1rem 3rem 2rem 3rem;
     margin-top: 1rem;
+    z-index: 10;
 }
 
 /* Section Area */

@@ -12,14 +12,22 @@
         </div>
         <div class="footer-email mb-5">
             <h2>Kritik dan Saran</h2>
-            <form action="" method="post">
+            @if(session('message'))
+            <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                <strong> {{session('message')}}</strong>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+            @endif
+            <form action="{{route('kritik')}}" method="post">
+                @csrf
+
+                <!-- <div class="form-group mb-2">
+                    <label for="name">Nama</label>
+                    <input type="name" class="form-control" name="name" id="name" required>
+                </div> -->
                 <div class="form-group mb-2">
-                    <label for="email">Email</label>
-                    <input type="email" class="form-control" name="email" id="email" aria-describedby="emailHelp">
-                </div>
-                <div class="form-group mb-2">
-                    <label for="kritik">Kritik dan saran</label>
-                    <textarea name="kritik" id="kritik" class="form-control"></textarea>
+                    <label for="body">Kritik dan saran</label>
+                    <textarea name="body" id="body" class="form-control" required></textarea>
                 </div>
                 <button type="submit" class="btn btn-primary">Kirim</button>
             </form>

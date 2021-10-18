@@ -99,7 +99,17 @@
     padding-bottom: 15px;
     width: 100%;
 }
-.register-input input {
+.register-input input{
+    display: block;
+    width: 300px;
+    height: 40px;
+    background-color: transparent;
+    border: 1px solid rgb(133, 132, 132);
+    transition: width 1s ease-in-out;
+    padding-left: 1.3rem;
+    padding-top: 0.5rem;
+}
+.register-input select{
     display: block;
     width: 300px;
     height: 40px;
@@ -111,6 +121,10 @@
 }
 
 .register-input input:focus {
+    border: 1px solid #ff2d6b;
+    outline: none;
+}
+.register-input select:focus {
     border: 1px solid #ff2d6b;
     outline: none;
 }
@@ -152,8 +166,26 @@
 .register-input input:focus + label {
     color: #ff2d6b;
 }
+.register-input select:focus + label,
+.register-input select:valid + label {
+    font-size: 11px;
+    top: -7px;
+    left: -10px;
+    width: auto;
+    background: #fff;
+}
+.register-input select:focus + label {
+    color: #ff2d6b;
+}
 .register-input input:focus + label + .splah,
 .register-input input:valid + label + .splah {
+    background: #ff2d6b;
+    width: 0;
+    left: -10px;
+    border: 1px solid #ff2d6b;
+}
+.register-input select:focus + label + .splah,
+.register-input select:valid + label + .splah {
     background: #ff2d6b;
     width: 0;
     left: -10px;

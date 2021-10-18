@@ -8,6 +8,10 @@ use App\Models\Submission;
 use App\Models\User;
 use Barryvdh\DomPDF\Facade as PDF;
 use Carbon\Carbon;
+use DateTime;
+use Facade\FlareClient\Time\Time;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Date;
 use Yajra\DataTables\Contracts\DataTable;
 use Yajra\DataTables\DataTables as DataTablesDataTables;
 use Yajra\DataTables\Facades\DataTables;
@@ -22,14 +26,26 @@ class AdminController extends Controller
     public function index()
     {
         $user = count(DB::table('users')->get());
-        $submissions = count(DB::table('submissions')->get());
+
+        $submission = Submission::all();
+        $submissions = count(DB::table('submissions')
+            ->where('level', 'desa')
+            ->get());
+
+        foreach ($submission as $submission) {
+            # code...
+            $dateNow = $submission->created_at;
+        }
         $proses = count(DB::table('submissions')
+            ->where('level', 'desa')
             ->where('status', 'Proses')
             ->get());
         $disetujui = count(DB::table('submissions')
+            ->where('level', 'desa')
             ->where('status', 'Disetujui')
             ->get());
         $ditolak = count(DB::table('submissions')
+            ->where('level', 'desa')
             ->where('status', 'Ditolak')
             ->get());
 
@@ -61,38 +77,55 @@ class AdminController extends Controller
 
         // Count Submission Today
         $domisiliToday = count(DB::table('submissions')
+            ->where('level', 'desa')
             ->where('jenis_surat', 'Surat Keterangan Domisili')
-            ->where('updated_at', Carbon::now())
+            ->where('created_at', $dateNow)
             ->get());
         $skckToday = count(DB::table('submissions')
+            ->where('level', 'desa')
             ->where('jenis_surat', 'Surat Pengantar SKCK')
-            ->where('updated_at', Carbon::now())
+            ->where('created_at', $dateNow)
             ->get());
         $sktmToday = count(DB::table('submissions')
+            ->where('level', 'desa')
             ->where('jenis_surat', 'Surat Keterangan Tidak Mampu')
-            ->where('updated_at', Carbon::now())
+            ->where('created_at', $dateNow)
             ->get());
         $skuToday = count(DB::table('submissions')
+            ->where('level', 'desa')
             ->where('jenis_surat', 'Surat Keterangan Usaha')
-            ->where('updated_at', Carbon::now())
+            ->where('created_at', $dateNow)
             ->get());
         $bedaNamaToday = count(DB::table('submissions')
+            ->where('level', 'desa')
             ->where('jenis_surat', 'Surat Keterangan Beda Nama')
-            ->where('updated_at', Carbon::now())
+            ->where('created_at', $dateNow)
             ->get());
         $penghasilanToday = count(DB::table('submissions')
+            ->where('level', 'desa')
             ->where('jenis_surat', 'Surat Keterangan Penghasilan')
-            ->where('updated_at', Carbon::now())
+            ->where('created_at', $dateNow)
             ->get());
         $kehilanganToday = count(DB::table('submissions')
+            ->where('level', 'desa')
             ->where('jenis_surat', 'Surat Keterangan Kehilangan')
-            ->where('updated_at', Carbon::now())
+            ->where('created_at', $dateNow)
             ->get());
         $keramaianToday = count(DB::table('submissions')
+            ->where('level', 'desa')
             ->where('jenis_surat', 'Surat Izin Keramaian')
-            ->where('updated_at', Carbon::now())
+            ->where('created_at', $dateNow)
             ->get());
 
+        // $notif = '';
+        $submissionView = Submission::where('level', 'desa')->get();
+        foreach ($submissionView as $views) {
+            if ($views->views === '0') {
+                $notif = true;
+            } else if ($views->views === '1') {
+                $notif = false;
+            }
+        }
 
         return view('admin.dashboard', [
             'user' => $user, 'submissions' => $submissions, 'proses' => $proses, 'disetujui' => $disetujui, 'ditolak' => $ditolak,
@@ -112,6 +145,7 @@ class AdminController extends Controller
             'penghasilanToday' => $penghasilanToday,
             'kehilanganToday' => $kehilanganToday,
             'keramaianToday' => $keramaianToday,
+            'notif' => $notif,
         ]);
     }
 
@@ -123,22 +157,26 @@ class AdminController extends Controller
         if ($request->ajax()) {
             if ($request->filter_type != '' && $request->filter_validation == '') {
                 $submissions = DB::table('Submissions')
+                    ->where('level', 'desa')
                     ->where('jenis_surat', $request->filter_type)
                     ->orderBy('status', 'DESC')
                     ->get();
             } else if ($request->filter_type == '' && $request->filter_validation != '') {
                 $submissions = DB::table('Submissions')
+                    ->where('level', 'desa')
                     ->where('status', $request->filter_validation)
                     ->orderBy('status', 'DESC')
                     ->get();
             } else if ($request->filter_type != '' && $request->filter_validation != '') {
                 $submissions = DB::table('Submissions')
+                    ->where('level', 'desa')
                     ->where('status', $request->filter_validation)
                     ->where('jenis_surat', $request->filter_type)
                     ->orderBy('status', 'DESC')
                     ->get();
             } else {
                 $submissions = DB::table('Submissions')
+                    ->where('level', 'desa')
                     ->orderBy('status', 'DESC')->get();
             }
             return DataTables()->of($submissions)
@@ -154,14 +192,27 @@ class AdminController extends Controller
                 })
                 ->addColumn('date', function ($data) {
                     $date = Carbon::parse($data->created_at)->isoFormat('dddd, D MMMM Y');
-                    $date = '<p>'.$date.'</p>';
+                    $date = '<p>' . $date . '</p>';
                     return $date;
                 })
                 ->rawColumns(['action', 'date'])
                 ->addIndexColumn()
                 ->make(true);
         }
-        return view('admin.listSubmissions');
+
+
+        $submissionView = Submission::where('level', 'desa')->get();
+        Submission::where('views', '0')
+            ->where('level', 'desa')
+            ->update(['views' => '1']);
+        foreach ($submissionView as $views) {
+            if ($views->views === '0') {
+                $notif = true;
+            } else if ($views->views === '1') {
+                $notif = false;
+            }
+        }
+        return view('admin.listSubmissions', ['notif' => $notif]);
     }
 
 
@@ -176,7 +227,7 @@ class AdminController extends Controller
             ]);
             return redirect('/admin/list')->with(
                 'success',
-                'Status Validasi Telah Dirubah',
+                'Status Validasi Telah Diubah',
             );
         } else {
             return redirect('/admin/list')->with(
@@ -246,7 +297,15 @@ class AdminController extends Controller
                 ->addIndexColumn()
                 ->make(true);
         }
-        return view('admin.report');
+        $submissionView = Submission::where('level', 'desa')->get();
+        foreach ($submissionView as $views) {
+            if ($views->views === '0') {
+                $notif = true;
+            } else if ($views->views === '1') {
+                $notif = false;
+            }
+        }
+        return view('admin.report', ['notif' => $notif]);
     }
 
     /**
@@ -320,8 +379,16 @@ class AdminController extends Controller
         $submissions = Submission::where('id', $id)->get();
         $submission = Submission::find($id);
         $user = User::where('nik', $submission->nik)->get();
+        $submissionView = Submission::where('level', 'desa')->get();
+        foreach ($submissionView as $views) {
+            if ($views->views === '0') {
+                $notif = true;
+            } else if ($views->views === '1') {
+                $notif = false;
+            }
+        }
 
-        return view('admin.detailSubmissions', ['submissions' => $submissions], ['user' => $user]);
+        return view('admin.detailSubmissions', ['submissions' => $submissions, 'user' => $user, 'notif' => $notif]);
     }
 
     /**
@@ -357,4 +424,14 @@ class AdminController extends Controller
     {
         //
     }
+
+
+
+    // Are RT
+
+
+
+
+
+    // Area RW
 }

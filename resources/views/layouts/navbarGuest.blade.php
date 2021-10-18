@@ -24,6 +24,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap" rel="stylesheet">
 
+    
+
     <title>@yield('tittle')</title>
 </head>
 
@@ -41,8 +43,14 @@
                 <li><a href="{{route('user-dashboard')}}">Dashboard</a></li>
                 @elseif(Auth::user()->is_admin==1)
                 <li><a href="{{route('admin-dashboard')}}">Dashboard</a></li>
-                    @endif
-                    @endguest
+                @elseif(Auth::user()->is_admin==2)
+                <li>
+                    <a href=" {{route('list-rt')}}">Permohonan</a>
+                </li>
+                @elseif(Auth::user()->is_admin==3)
+                <li><a href="{{route('list-rw')}}">Permohonan</a></li>
+                @endif
+                @endguest
                 <li><a href="{{route('about')}}">Tentang Kami</a></li>
             </div>
 
@@ -54,7 +62,7 @@
                 @if(Auth::user()->is_admin == 0)
                 <a href="#" style="text-decoration: none; color: #ffff; width: 6rem;">{{Auth::user()->name}}</a>
                 @else
-                <a href="{{route('admin-dashboard')}}" style="text-decoration: none; color: #ffff; width: 6rem;">{{Auth::user()->name}}</a>
+                <a href="{{route('admin-dashboard')}}" style="text-decoration: none; color: #ffff; width: 10rem;">{{Auth::user()->name}}</a>
                 @endif
                 <form action="{{route('logout')}}" method="post">
                     @csrf

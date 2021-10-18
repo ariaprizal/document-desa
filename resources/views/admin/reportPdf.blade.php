@@ -90,7 +90,7 @@
         }
 
         table tr th {
-            text-align: left;
+            text-align: center;
             border: 1px solid black;
             height: 3rem;
             padding-left: .5rem;
@@ -119,12 +119,12 @@
 
             <thead>
                 <tr>
-                    <th scope="col">NO</th>
-                    <th scope="col">Id Pengajuan</th>
-                    <th scope="col">Nama Pengaju</th>
-                    <th scope="col">NIK</th>
-                    <th scope="col">Jenis Surat</th>
-                    <th scope="col">Tanggal</th>
+                    <th scope="col text-center">NO</th>
+                    <th scope="col text-center">Id Pengajuan</th>
+                    <th scope="col text-center">Nama Pengaju</th>
+                    <th scope="col text-center">NIK</th>
+                    <th scope="col text-center">Jenis Surat</th>
+                    <th scope="col text-center">Tanggal</th>
                 </tr>
             <tbody>
                 @foreach($submissions as $submit)

@@ -36,6 +36,8 @@ class Submission extends Migration
             $table->string('tertulis2')->nullable();
             $table->string('barang')->nullable();
             $table->string('besar')->nullable();
+            $table->string('views')->nullable();
+            $table->string('level')->nullable();
             $table->enum('status', ['Disetujui', 'Ditolak', 'Proses'])->nullable();
             $table->timestamps();
         });

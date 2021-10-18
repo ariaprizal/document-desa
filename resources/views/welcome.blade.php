@@ -7,19 +7,20 @@
         <img src="{{asset('/images/jumbotron.jpg')}}" alt="document Background">
     </div>
     <div class="jumbo-text">
-        <h2>Selamat Datang Dilayanan Pembuatan Dokumen Kependudukan</h2>
+        <h2>Selamat Datang Di Layanan Pembuatan Dokumen Kependudukan</h2>
         <h3>Desa Nanggerang</h3>
-        <a href="">Informasi Lebih Lanjut</a>
+
+        <!-- <a href="{{route('about')}}">Informasi Lebih Lanjut</a> -->
     </div>
 </header>
 
 <section class="section-content">
-    <div class="intro" >
+    <div class="intro">
         <div class="intro-text" data-aos="fade-in" data-aos-duration="2000">
             <h3>Membuat Dokumen Kapanpun Dimanapun</h3>
             <p>Lakukan Pengajuan Dokumen atau surat-surat yang dibutuhkan dengan mudah dan cepat di manapun dan kapanpun secara online. Pengajuan dapat dilakukan melalui Handphone masing masing selama terkoneksi ke Internet</p>
         </div>
-        <div class="intro-img"data-aos="fade-up" data-aos-duration="2000">
+        <div class="intro-img" data-aos="fade-up" data-aos-duration="2000">
             <img src="{{asset('images/sc1-2.jpg')}}" alt="image">
         </div>
     </div>
@@ -31,15 +32,15 @@
         </div>
         <div class="by-step">
             <i class="bi bi-card-list"></i>
-            <p>Buat pengajuan dokumen yang diperlukan dan isi data secara lengkap</p>
+            <p>Lakukan Pendaftaran dan Masuk dengan akun anda</p>
         </div>
         <div class="by-step">
             <i class="bi bi-check-circle"></i>
-            <p>Dokumen Berhasil diajukan, tunggu pegawai desa melakukan persejuan</p>
+            <p>Buat Pengajuan dokumen dan isi semua data</p>
         </div>
         <div class="by-step">
             <i class="bi bi-arrow-down-circle"></i>
-            <p>Download dokumen pada halaman riwayat pengajuan</p>
+            <p>Setelah dokumen disetujui, Download dokumen pada halaman riwayat pengajuan</p>
         </div>
     </div>
 </section>

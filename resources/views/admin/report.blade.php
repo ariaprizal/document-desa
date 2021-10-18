@@ -29,12 +29,12 @@
         <table class="table  table-bordered table-hover " id="table-report">
             <thead class="table-success">
                 <tr>
-                    <th scope="col">NO</th>
-                    <th scope="col">Id Pengajuan</th>
-                    <th scope="col">Nama Pengaju</th>
-                    <th scope="col">NIK</th>
-                    <th scope="col">Jenis Surat</th>
-                    <th scope="col">Tanggal</th>
+                    <th scope="col" style="text-align: center;">NO</th>
+                    <th scope="col" style="text-align: center;">Id Pengajuan</th>
+                    <th scope="col" style="text-align: center;">Nama Pengaju</th>
+                    <th scope="col" style="text-align: center;">NIK</th>
+                    <th scope="col" style="text-align: center;">Jenis Surat</th>
+                    <th scope="col" style="text-align: center;">Tanggal</th>
                 </tr>
 
             </thead>
